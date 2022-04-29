@@ -36,3 +36,7 @@ export const getSelected = createSelector(
   getSelectedId,
   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
 );
+export const getSelectedCats = createSelector(
+  getGalleryState,
+  (state:State)=>state.selectedCats
+);

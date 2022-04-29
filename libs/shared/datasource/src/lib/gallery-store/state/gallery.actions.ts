@@ -12,3 +12,8 @@ export const loadGalleryFailure = createAction(
   '[Gallery/API] Load Gallery Failure',
   props<{ error: any }>()
 );
+export const toggleSelectCat = createAction(
+  '[Gallery] Toggle Select Cats',
+  props<{ cat: any }>()
+);
+
