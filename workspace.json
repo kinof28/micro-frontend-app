@@ -3,6 +3,7 @@
   "projects": {
     "gallery": "apps/gallery",
     "gallery-e2e": "apps/gallery-e2e",
+    "shared-datasource": "libs/shared/datasource",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e"
   }

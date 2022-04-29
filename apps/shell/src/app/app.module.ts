@@ -13,6 +13,10 @@ import { HomeComponent } from './home/home.component';
     RouterModule.forRoot(
       [
         {
+          path: '',
+          component: HomeComponent
+        },
+        {
           path: 'gallery',
           loadChildren: () =>
             import('gallery/Module').then((m) => m.RemoteEntryModule),
