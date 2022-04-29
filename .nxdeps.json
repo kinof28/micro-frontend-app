@@ -1,0 +1,732 @@
+{
+  "graph": {
+    "nodes": {
+      "gallery-e2e": {
+        "name": "gallery-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/gallery-e2e",
+          "sourceRoot": "apps/gallery-e2e/src",
+          "projectType": "application",
+          "targets": {
+            "e2e": {
+              "executor": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/gallery-e2e/cypress.json",
+                "devServerTarget": "gallery:serve:development"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "gallery:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "executor": "@nrwl/linter:eslint",
+              "outputs": [
+                "{options.outputFile}"
+              ],
+              "options": {
+                "lintFilePatterns": [
+                  "apps/gallery-e2e/**/*.{js,ts}"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "implicitDependencies": [
+            "gallery"
+          ],
+          "files": [
+            {
+              "file": "apps/gallery-e2e/.eslintrc.json",
+              "hash": "696cb8b12127425419f6d2809c5f15a5963d86de"
+            },
+            {
+              "file": "apps/gallery-e2e/cypress.json",
+              "hash": "2d6f962a9ca383a3fc3d72b8caca16ef019f98fe"
+            },
+            {
+              "file": "apps/gallery-e2e/project.json",
+              "hash": "9c7841ccb405547257038add5ad102f7c6a3b694"
+            },
+            {
+              "file": "apps/gallery-e2e/src/fixtures/example.json",
+              "hash": "294cbed6ce9e0b948b787452e8676aee486cb3be"
+            },
+            {
+              "file": "apps/gallery-e2e/src/integration/app.spec.ts",
+              "hash": "e9f70a7f16139b269a66b305eae1ae296f51877a"
+            },
+            {
+              "file": "apps/gallery-e2e/src/support/app.po.ts",
+              "hash": "32934246969c2ecb827ac05677785933a707a54d"
+            },
+            {
+              "file": "apps/gallery-e2e/src/support/commands.ts",
+              "hash": "310f1fa0e043ffebbbcf575c5a4d17f13a6b14d6"
+            },
+            {
+              "file": "apps/gallery-e2e/src/support/index.ts",
+              "hash": "15495d388fc2f865921da57ac1a005c184bacbde"
+            },
+            {
+              "file": "apps/gallery-e2e/tsconfig.json",
+              "hash": "eed477927cc7ae6bd893346f66121ea1338218e1"
+            }
+          ]
+        }
+      },
+      "shell-e2e": {
+        "name": "shell-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/shell-e2e",
+          "sourceRoot": "apps/shell-e2e/src",
+          "projectType": "application",
+          "targets": {
+            "e2e": {
+              "executor": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/shell-e2e/cypress.json",
+                "devServerTarget": "shell:serve:development"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "shell:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "executor": "@nrwl/linter:eslint",
+              "outputs": [
+                "{options.outputFile}"
+              ],
+              "options": {
+                "lintFilePatterns": [
+                  "apps/shell-e2e/**/*.{js,ts}"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "implicitDependencies": [
+            "shell"
+          ],
+          "files": [
+            {
+              "file": "apps/shell-e2e/.eslintrc.json",
+              "hash": "4c5989b23b5aa8cc7aba2a07d1ae7daee19c1555"
+            },
+            {
+              "file": "apps/shell-e2e/cypress.json",
+              "hash": "82862290e8aae5bd368c0040dd6162dbacb5947b"
+            },
+            {
+              "file": "apps/shell-e2e/project.json",
+              "hash": "0601697f8ee79f0b5fd3e8bbe119b42766a5a7a5"
+            },
+            {
+              "file": "apps/shell-e2e/src/fixtures/example.json",
+              "hash": "294cbed6ce9e0b948b787452e8676aee486cb3be"
+            },
+            {
+              "file": "apps/shell-e2e/src/integration/app.spec.ts",
+              "hash": "89e7eae972018ed7cec46ff70e01c31351d400f0"
+            },
+            {
+              "file": "apps/shell-e2e/src/support/app.po.ts",
+              "hash": "32934246969c2ecb827ac05677785933a707a54d"
+            },
+            {
+              "file": "apps/shell-e2e/src/support/commands.ts",
+              "hash": "310f1fa0e043ffebbbcf575c5a4d17f13a6b14d6"
+            },
+            {
+              "file": "apps/shell-e2e/src/support/index.ts",
+              "hash": "15495d388fc2f865921da57ac1a005c184bacbde"
+            },
+            {
+              "file": "apps/shell-e2e/tsconfig.json",
+              "hash": "eed477927cc7ae6bd893346f66121ea1338218e1"
+            }
+          ]
+        }
+      },
+      "gallery": {
+        "name": "gallery",
+        "type": "app",
+        "data": {
+          "root": "apps/gallery",
+          "projectType": "application",
+          "sourceRoot": "apps/gallery/src",
+          "prefix": "mf-app",
+          "targets": {
+            "build": {
+              "executor": "@nrwl/angular:webpack-browser",
+              "outputs": [
+                "{options.outputPath}"
+              ],
+              "options": {
+                "outputPath": "dist/apps/gallery",
+                "index": "apps/gallery/src/index.html",
+                "main": "apps/gallery/src/main.ts",
+                "polyfills": "apps/gallery/src/polyfills.ts",
+                "tsConfig": "apps/gallery/tsconfig.app.json",
+                "assets": [
+                  "apps/gallery/src/favicon.ico",
+                  "apps/gallery/src/assets"
+                ],
+                "styles": [
+                  "apps/gallery/src/styles.css"
+                ],
+                "scripts": [],
+                "customWebpackConfig": {
+                  "path": "apps/gallery/webpack.config.js"
+                }
+              },
+              "configurations": {
+                "production": {
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "500kb",
+                      "maximumError": "1mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "2kb",
+                      "maximumError": "4kb"
+                    }
+                  ],
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/gallery/src/environments/environment.ts",
+                      "with": "apps/gallery/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "outputHashing": "all",
+                  "customWebpackConfig": {
+                    "path": "apps/gallery/webpack.prod.config.js"
+                  }
+                },
+                "development": {
+                  "buildOptimizer": false,
+                  "optimization": false,
+                  "vendorChunk": true,
+                  "extractLicenses": false,
+                  "sourceMap": true,
+                  "namedChunks": true
+                }
+              },
+              "defaultConfiguration": "production"
+            },
+            "serve": {
+              "executor": "@nrwl/angular:webpack-server",
+              "configurations": {
+                "production": {
+                  "browserTarget": "gallery:build:production"
+                },
+                "development": {
+                  "browserTarget": "gallery:build:development"
+                }
+              },
+              "defaultConfiguration": "development",
+              "options": {
+                "port": 3001,
+                "publicHost": "http://localhost:3001"
+              }
+            },
+            "extract-i18n": {
+              "executor": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "gallery:build"
+              }
+            },
+            "lint": {
+              "executor": "@nrwl/linter:eslint",
+              "options": {
+                "lintFilePatterns": [
+                  "apps/gallery/**/*.ts",
+                  "apps/gallery/**/*.html"
+                ]
+              }
+            },
+            "test": {
+              "executor": "@nrwl/jest:jest",
+              "outputs": [
+                "coverage/apps/gallery"
+              ],
+              "options": {
+                "jestConfig": "apps/gallery/jest.config.ts",
+                "passWithNoTests": true
+              }
+            },
+            "serve-static": {
+              "executor": "@nrwl/angular:file-server",
+              "defaultConfiguration": "development",
+              "options": {
+                "buildTarget": "gallery:build",
+                "port": 3001
+              },
+              "configurations": {
+                "development": {
+                  "buildTarget": "gallery:build:development"
+                },
+                "production": {
+                  "buildTarget": "gallery:build:production"
+                }
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/gallery/.browserslistrc",
+              "hash": "4f9ac26980c156a3d525267010d5f78144b43519"
+            },
+            {
+              "file": "apps/gallery/.eslintrc.json",
+              "hash": "589fc99b9f4c4fc6d5e40ec876335d8222b07fe7"
+            },
+            {
+              "file": "apps/gallery/jest.config.ts",
+              "hash": "949abc2dd856b8adfc4b8c46c7f246d09cc6887b"
+            },
+            {
+              "file": "apps/gallery/module-federation.config.js",
+              "hash": "c143234f0aef234223ebfc346064494efbb8fa4d"
+            },
+            {
+              "file": "apps/gallery/project.json",
+              "hash": "c90d51901113d931e4357cf3ebba5d9c21789fd4"
+            },
+            {
+              "file": "apps/gallery/src/app/app.component.css",
+              "hash": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+            },
+            {
+              "file": "apps/gallery/src/app/app.component.html",
+              "hash": "1a97efb6adfbdd1c420eeb584fb1883176b4c85f"
+            },
+            {
+              "file": "apps/gallery/src/app/app.component.spec.ts",
+              "hash": "de588b62b3f4034c030b903fb3bb08936a106f60",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/router"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/app/app.component.ts",
+              "hash": "afa719c9629b34bdc67b30c81c8eac772ab356bc",
+              "deps": [
+                "npm:@angular/core"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/app/app.module.ts",
+              "hash": "4e76dc0c47b66c2d8127291631abcb4b8bf0428c",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/platform-browser",
+                "npm:@angular/router"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/app/nx-welcome.component.ts",
+              "hash": "988ce14f7fff8483ff0ae8f54882cd63d170c99d",
+              "deps": [
+                "npm:@angular/core"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/app/remote-entry/entry.component.ts",
+              "hash": "bad62d11ca5563e014b3d1ff573c8856a8e0573a",
+              "deps": [
+                "npm:@angular/core"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/app/remote-entry/entry.module.ts",
+              "hash": "63fe070c61197e06f897f717c7e71077cd0e18cc",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/common",
+                "npm:@angular/router"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/assets/.gitkeep",
+              "hash": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+            },
+            {
+              "file": "apps/gallery/src/bootstrap.ts",
+              "hash": "d9a2e7e4a582e265db779363bd8b2492c43c141b",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/platform-browser-dynamic"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/environments/environment.prod.ts",
+              "hash": "c9669790be176ac85a5d8c11278875c2f52dc507"
+            },
+            {
+              "file": "apps/gallery/src/environments/environment.ts",
+              "hash": "66998ae9a7c27359bc473c6d2aa0029dd1f4b700"
+            },
+            {
+              "file": "apps/gallery/src/favicon.ico",
+              "hash": "317ebcb2336e0833a22dddf0ab287849f26fda57"
+            },
+            {
+              "file": "apps/gallery/src/index.html",
+              "hash": "98915ae0c6709ce73427fa4d2b2683abbafc394f"
+            },
+            {
+              "file": "apps/gallery/src/main.ts",
+              "hash": "5070220eacedd52527de9f3a46a9c427e32d0c30"
+            },
+            {
+              "file": "apps/gallery/src/polyfills.ts",
+              "hash": "e4555ed11fa2f217b8e4c744d564da4f7388b4c4",
+              "deps": [
+                "npm:zone.js"
+              ]
+            },
+            {
+              "file": "apps/gallery/src/styles.css",
+              "hash": "90d4ee0072ce3fc41812f8af910219f9eea3c3de"
+            },
+            {
+              "file": "apps/gallery/src/test-setup.ts",
+              "hash": "1100b3e8a6ed08f4b5c27a96471846d57023c320",
+              "deps": [
+                "npm:jest-preset-angular"
+              ]
+            },
+            {
+              "file": "apps/gallery/tsconfig.app.json",
+              "hash": "6c01edb21da6d2456fd94adfd80edf178ff41e8d"
+            },
+            {
+              "file": "apps/gallery/tsconfig.editor.json",
+              "hash": "0f9036b03d92a6d3b6a2622e7c9e82849baa88bd"
+            },
+            {
+              "file": "apps/gallery/tsconfig.json",
+              "hash": "02add216608561f0c4385feaf9c5082f2d71bf60"
+            },
+            {
+              "file": "apps/gallery/tsconfig.spec.json",
+              "hash": "c5db02778f96a2a200d787c0a7b376fe0d6c36f7"
+            },
+            {
+              "file": "apps/gallery/webpack.config.js",
+              "hash": "79dea22421c6d7dea9dbdc22146ef006c98d7f41",
+              "deps": [
+                "npm:@nrwl/angular"
+              ]
+            },
+            {
+              "file": "apps/gallery/webpack.prod.config.js",
+              "hash": "15c314d82cf501c4a3552ec71aca26ae878960de",
+              "deps": [
+                "npm:@nrwl/angular"
+              ]
+            }
+          ]
+        }
+      },
+      "shell": {
+        "name": "shell",
+        "type": "app",
+        "data": {
+          "root": "apps/shell",
+          "projectType": "application",
+          "sourceRoot": "apps/shell/src",
+          "prefix": "mf-app",
+          "targets": {
+            "build": {
+              "executor": "@nrwl/angular:webpack-browser",
+              "outputs": [
+                "{options.outputPath}"
+              ],
+              "options": {
+                "outputPath": "dist/apps/shell",
+                "index": "apps/shell/src/index.html",
+                "main": "apps/shell/src/main.ts",
+                "polyfills": "apps/shell/src/polyfills.ts",
+                "tsConfig": "apps/shell/tsconfig.app.json",
+                "assets": [
+                  "apps/shell/src/favicon.ico",
+                  "apps/shell/src/assets"
+                ],
+                "styles": [
+                  "apps/shell/src/styles.css"
+                ],
+                "scripts": [],
+                "customWebpackConfig": {
+                  "path": "apps/shell/webpack.config.js"
+                }
+              },
+              "configurations": {
+                "production": {
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "500kb",
+                      "maximumError": "1mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "2kb",
+                      "maximumError": "4kb"
+                    }
+                  ],
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/shell/src/environments/environment.ts",
+                      "with": "apps/shell/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "outputHashing": "all",
+                  "customWebpackConfig": {
+                    "path": "apps/shell/webpack.prod.config.js"
+                  }
+                },
+                "development": {
+                  "buildOptimizer": false,
+                  "optimization": false,
+                  "vendorChunk": true,
+                  "extractLicenses": false,
+                  "sourceMap": true,
+                  "namedChunks": true
+                }
+              },
+              "defaultConfiguration": "production"
+            },
+            "serve": {
+              "executor": "@nrwl/angular:module-federation-dev-server",
+              "configurations": {
+                "production": {
+                  "browserTarget": "shell:build:production"
+                },
+                "development": {
+                  "browserTarget": "shell:build:development"
+                }
+              },
+              "defaultConfiguration": "development",
+              "options": {
+                "port": 3000,
+                "publicHost": "http://localhost:3000"
+              }
+            },
+            "extract-i18n": {
+              "executor": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "shell:build"
+              }
+            },
+            "lint": {
+              "executor": "@nrwl/linter:eslint",
+              "options": {
+                "lintFilePatterns": [
+                  "apps/shell/**/*.ts",
+                  "apps/shell/**/*.html"
+                ]
+              }
+            },
+            "test": {
+              "executor": "@nrwl/jest:jest",
+              "outputs": [
+                "coverage/apps/shell"
+              ],
+              "options": {
+                "jestConfig": "apps/shell/jest.config.ts",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/shell/.browserslistrc",
+              "hash": "4f9ac26980c156a3d525267010d5f78144b43519"
+            },
+            {
+              "file": "apps/shell/.eslintrc.json",
+              "hash": "589fc99b9f4c4fc6d5e40ec876335d8222b07fe7"
+            },
+            {
+              "file": "apps/shell/jest.config.ts",
+              "hash": "c09c79287535af719006b28e21af02efd4e0698f"
+            },
+            {
+              "file": "apps/shell/module-federation.config.js",
+              "hash": "cacf84174953ba8836dc2cb166604fc7983c3636"
+            },
+            {
+              "file": "apps/shell/project.json",
+              "hash": "5f2396f7294c6d3581167874c33a7e88f448231d"
+            },
+            {
+              "file": "apps/shell/src/app/app.component.css",
+              "hash": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+            },
+            {
+              "file": "apps/shell/src/app/app.component.html",
+              "hash": "1a97efb6adfbdd1c420eeb584fb1883176b4c85f"
+            },
+            {
+              "file": "apps/shell/src/app/app.component.spec.ts",
+              "hash": "1e9fcc991fcf80f0343735f440d38feaa9bc5509",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/router"
+              ]
+            },
+            {
+              "file": "apps/shell/src/app/app.component.ts",
+              "hash": "beac6d054a89a1f83a18e239cc51f82d55d2ba19",
+              "deps": [
+                "npm:@angular/core"
+              ]
+            },
+            {
+              "file": "apps/shell/src/app/app.module.ts",
+              "hash": "2059c11fe31499f4d4384df91d601f7ca033e61b",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/platform-browser",
+                "npm:@angular/router"
+              ]
+            },
+            {
+              "file": "apps/shell/src/app/nx-welcome.component.ts",
+              "hash": "54fa977c2e341c0227fe8107dbe7d0f1c795738e",
+              "deps": [
+                "npm:@angular/core"
+              ]
+            },
+            {
+              "file": "apps/shell/src/assets/.gitkeep",
+              "hash": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+            },
+            {
+              "file": "apps/shell/src/bootstrap.ts",
+              "hash": "d9a2e7e4a582e265db779363bd8b2492c43c141b",
+              "deps": [
+                "npm:@angular/core",
+                "npm:@angular/platform-browser-dynamic"
+              ]
+            },
+            {
+              "file": "apps/shell/src/decl.d.ts",
+              "hash": "86307e79fc97e8a1492de9095c1d818e13f06c04"
+            },
+            {
+              "file": "apps/shell/src/environments/environment.prod.ts",
+              "hash": "c9669790be176ac85a5d8c11278875c2f52dc507"
+            },
+            {
+              "file": "apps/shell/src/environments/environment.ts",
+              "hash": "66998ae9a7c27359bc473c6d2aa0029dd1f4b700"
+            },
+            {
+              "file": "apps/shell/src/favicon.ico",
+              "hash": "317ebcb2336e0833a22dddf0ab287849f26fda57"
+            },
+            {
+              "file": "apps/shell/src/index.html",
+              "hash": "f527eb4ef113f7624dd08b9b7f25eef305c19d6f"
+            },
+            {
+              "file": "apps/shell/src/main.ts",
+              "hash": "5070220eacedd52527de9f3a46a9c427e32d0c30"
+            },
+            {
+              "file": "apps/shell/src/polyfills.ts",
+              "hash": "e4555ed11fa2f217b8e4c744d564da4f7388b4c4",
+              "deps": [
+                "npm:zone.js"
+              ]
+            },
+            {
+              "file": "apps/shell/src/styles.css",
+              "hash": "90d4ee0072ce3fc41812f8af910219f9eea3c3de"
+            },
+            {
+              "file": "apps/shell/src/test-setup.ts",
+              "hash": "1100b3e8a6ed08f4b5c27a96471846d57023c320",
+              "deps": [
+                "npm:jest-preset-angular"
+              ]
+            },
+            {
+              "file": "apps/shell/tsconfig.app.json",
+              "hash": "6c01edb21da6d2456fd94adfd80edf178ff41e8d"
+            },
+            {
+              "file": "apps/shell/tsconfig.editor.json",
+              "hash": "0f9036b03d92a6d3b6a2622e7c9e82849baa88bd"
+            },
+            {
+              "file": "apps/shell/tsconfig.json",
+              "hash": "02add216608561f0c4385feaf9c5082f2d71bf60"
+            },
+            {
+              "file": "apps/shell/tsconfig.spec.json",
+              "hash": "c5db02778f96a2a200d787c0a7b376fe0d6c36f7"
+            },
+            {
+              "file": "apps/shell/webpack.config.js",
+              "hash": "79dea22421c6d7dea9dbdc22146ef006c98d7f41",
+              "deps": [
+                "npm:@nrwl/angular"
+              ]
+            },
+            {
+              "file": "apps/shell/webpack.prod.config.js",
+              "hash": "15c314d82cf501c4a3552ec71aca26ae878960de",
+              "deps": [
+                "npm:@nrwl/angular"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "dependencies": {
+      "gallery-e2e": [
+        {
+          "source": "gallery-e2e",
+          "target": "gallery",
+          "type": "implicit"
+        }
+      ],
+      "shell-e2e": [
+        {
+          "source": "shell-e2e",
+          "target": "shell",
+          "type": "implicit"
+        }
+      ],
+      "gallery": [],
+      "shell": []
+    }
+  },
+  "affectedProjects": [
+    "gallery-e2e",
+    "gallery",
+    "shell-e2e",
+    "shell"
+  ],
+  "criticalPath": [
+    "gallery-e2e",
+    "gallery",
+    "shell-e2e",
+    "shell"
+  ]
+}
