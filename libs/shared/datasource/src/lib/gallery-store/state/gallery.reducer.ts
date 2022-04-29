@@ -42,6 +42,7 @@ const galleryReducer = createReducer(
   })),
   on(GalleryActions.toggleSelectCat,(state, {cat})=>{
     const newState={...state};
+    console.log(cat);
     if(newState.selectedCats.has(cat.id)){
       newState.selectedCats.delete(cat.id);
     }else {

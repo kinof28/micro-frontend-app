@@ -30,7 +30,7 @@ export class GalleryFacade {
     return this.selectedCats$.pipe(map((selectedCats)=>selectedCats.has(catId)));
   }
   toggleSelectCat(cat:any){
-    this.store.dispatch(GalleryActions.toggleSelectCat(cat));
+    this.store.dispatch(GalleryActions.toggleSelectCat({cat}));
   }
 
 }
